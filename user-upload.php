@@ -38,9 +38,6 @@ if (isset($_SESSION['username'])) {
                     <li class="nav-item active">
                         <a class="nav-link" href="./user-upload.php">Upload Users<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropdown">

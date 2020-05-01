@@ -43,10 +43,11 @@ function getQuestions($db){
 }
 
 function getQuestionCount($db){
-    $query = "SELECT COUNT(*) FROM questions";
+    $count = 0;
+    $query = "SELECT COUNT(*) AS total FROM questions";
     $stmt = $db->query($query);
-
-    return mysqli_num_rows($stmt);
+    $count = $stmt->fetch_row()[0];
+    return $count;
 }
 
 function solvedQuestion($db, $questionId){

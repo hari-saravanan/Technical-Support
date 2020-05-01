@@ -1,7 +1,7 @@
 <?php
 
 if(IsSet($_POST) &&IsSet($_POST['answerId'])){
-    $answerId = IsSet($_POST['answerId']);#
+    $answerId = ($_POST['answerId']);
 
     require_once '../utils/db_connect.php';
     require_once '../utils/queries/answers_queries.php';

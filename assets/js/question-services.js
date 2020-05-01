@@ -34,6 +34,7 @@ function addAnswers() {
 }
 
 function getAnswers() {
+    $('#answers').empty();
     var questionId = questionDetails.id;
     var url = './assets/ajax-services/get-answers.php';
     var data = {
@@ -43,6 +44,7 @@ function getAnswers() {
 
     $.post(url, data, function (result) {
         var value = JSON.parse(result);
+        console.log(value);
         html += '<br><h4>'+ value.length + ' Answers</h4><br>';
 
         value.forEach(function (item) {
