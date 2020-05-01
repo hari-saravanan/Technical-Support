@@ -30,6 +30,7 @@ function addAnswers() {
     $.post(url, data, function (result) {
         console.log(result);
         alert('Answer Posted Successfully');
+        getAnswers();
     })
 }
 
