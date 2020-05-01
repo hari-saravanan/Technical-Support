@@ -1,6 +1,6 @@
 <?php
 
-function createTableIfNeeded($db){
+function createRolesTableIfNeeded($db){
     $query = 'CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `role_name` varchar(100) DEFAULT NULL,
@@ -8,6 +8,14 @@ function createTableIfNeeded($db){
   PRIMARY KEY (`id`)
 )';
     $result = $db->query($query);
+}
+
+function insertRoles($db, $roleId, $roleName, $description){
+    $query = "INSERT INTO roles (id, role_name, role_description) VALUES (?, ?, ?)";
+    $stmt = $db->prepare($query);
+    $stmt->bind_param('iss', $roleId, $roleName, $description);
+    $stmt->execute();
+    return ($stmt->affected_rows > 0);
 }
 
 function getRoleByName($db, $name){
