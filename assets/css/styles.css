@@ -1,0 +1,25 @@
+.alignright {
+    float: right;
+}
+
+.alignleft {
+    float: left;
+}
+
+#question {
+    margin-top: 5px;
+}
+
+#solve {
+    float: left;
+}
+
+#feedback {
+    background-color: red;
+    padding: 5px;
+    text-align: center;
+}
+
+table { width:250px;table-layout:fixed; }
+table tr { height:1em;  }
+td { overflow:hidden;white-space:nowrap;  }
